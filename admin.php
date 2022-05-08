@@ -1,43 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>home</title>
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>about</title>
 
-    <!-- swiper css link  -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
-    />
+   <!-- swiper css link  -->
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
-    <!-- font awesome cdn link  -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- header section starts  -->
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
 
-    <section class="header">
-      <a href="home.php" class="logo">ISharepixels.</a>
+</head>
+<body>
+   
 
-      <nav class="navbar">
+
+<section class="header">
+
+   <a href="home.php" class="logo">ISharepixels.</a>
+
+   <nav class="navbar">
         <a href="home.html">home</a>
         <a href="about.html">about</a>
         <a href="gallery.php">gallery</a>
-        <a href="register.php">Register</a>
+        <a href="">Register</a>
       </nav>
 
-      <div id="menu-btn" class="fas fa-bars"></div>
-    </section>
+   <div id="menu-btn" class="fas fa-bars"></div>
 
-
+</section>
 
 <?php
     session_start();
@@ -45,32 +41,32 @@
 
     $dir = "gallery/";  // set your gallery folder name
 
-    $username = 'admin';   //set ur username
-    $password = 'admin';   //set ur password
+    // $username = 'admin';   //set ur username
+    // $password = 'admin';   //set ur password
 
-    if(isset($_POST['username']))
-    {
-        $fromuser = $_POST['username']; 
-        $frompass = $_POST['password']; 
-        if($fromuser==$username || $frompass==$password)
-        {
-            $_SESSION["access"] = 1;
-        }
-        else
-        {
-            echo "Invalid Username or Password";
-        }
-    }
+    // if(isset($_POST['username']))
+    // {
+    //     $fromuser = $_POST['username']; 
+    //     $frompass = $_POST['password']; 
+    //     if($fromuser==$username || $frompass==$password)
+    //     {
+    //         $_SESSION["access"] = 1;
+    //     }
+    //     else
+    //     {
+    //         echo "Invalid Username or Password";
+    //     }
+    // }
 
     if(isset($_GET['del']))
     {
         unlink($dir.'/'.$_GET['del']);
     }
 
-    if(isset($_GET['logout']))
-    {
-        session_destroy();
-    }
+    // if(isset($_GET['logout']))
+    // {
+    //     session_destroy();
+    // }
 
     if(isset($_POST['fileupload']))
     {
@@ -82,7 +78,7 @@
         }  
     }
 
-    $useraccess = $_SESSION["access"];
+    // $useraccess = $_SESSION["access"];
 
 ?>
 <!DOCTYPE html>
@@ -93,51 +89,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-
-<?php if($useraccess!=1){  ?>
-
-<main class="login-form" style="margin-top: 150px;">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Login to Admin Panel</div>
-                    <div class="card-body">
-                        <form action="" method="post">
-                            <div class="form-group row">
-                                <label  class="col-md-4 col-form-label text-md-right">Username</label>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" name="username" required autofocus>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-                                <div class="col-md-6">
-                                    <input type="password" id="password" class="form-control" name="password" required>
-                                </div>
-                            </div>
-
-                            
-
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-                               
-                            </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-</main>
-
-<?php } else { ?>
-
 
 <main class="login-form" style="margin-top: 50px;">
     <div class="cotainer">
@@ -196,15 +147,13 @@
                     </div>
                 </div>
             </div>
-            <?php } ?>
+        
         </div>
 
         </div>
 
 </main>
- <center> <br> <a href="?logout=1" > Logout From Admin </a> </center>
 
-<? } ?>
 
 </body>
 </html>

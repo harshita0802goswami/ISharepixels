@@ -340,7 +340,7 @@ section{
 }
 
 .about .image{
-   flex:1 1 41rem;
+   flex: 1 41rem;
 }
 
 .about .image img{
@@ -353,7 +353,7 @@ section{
 }
 
 .about .content h3{
-   font-size: 3rem;
+   font-size: 2rem;
    color:var(--black);
 }
 

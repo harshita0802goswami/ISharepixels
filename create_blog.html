@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>create blog</title>
+
+    <!-- swiper css link  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <section class="header">
+      <a href="home.html" class="logo">ISharepixels.</a>
+
+      <nav class="navbar">
+        <a href="home.html">home</a>
+        <a href="about.html">about</a>
+        <a href="gallery.php">gallery</a>
+        <a href="register.php">register</a>
+        <a href="book.html">Book</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
+
+    <!-- header section ends -->
+
+    <div
+      class="heading"
+      style="background: url(images/header-bg-1.png) no-repeat"
+    >
+      <h1>write your blog!!</h1>
+    </div>
+
+    <!-- booking section starts  -->
+
+    <section class="booking">
+      <form action="create_blog.php" method="post" class="book-form">
+        <div class="flex">
+          <div class="inputBox">
+            <span>name :</span>
+            <input type="text" placeholder="enter your name" name="posted_by" />
+          </div>
+          <div class="inputBox">
+            <span>title :</span>
+            <input
+              type="text"
+              placeholder="enter your blog title"
+              name="title"
+            />
+          </div>
+          <div class="inputBox">
+            <span>content:</span>
+            <input
+              type="text"
+              placeholder="enter your content"
+              name="content"
+            />
+          </div>
+        </div>
+
+        <input type="submit" value="submit" class="btn" name="send" />
+      </form>
+    </section>
+
+    <!-- booking section ends -->
+
+    <!-- swiper js link  -->
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script>
+      CKEDITOR.replace("content");
+    </script>
+  </body>
+</html>
